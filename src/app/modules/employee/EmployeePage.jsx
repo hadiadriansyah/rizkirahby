@@ -12,7 +12,7 @@ const EmployeePage = () => {
         <Route path="/" exact element={<Data />} />
         <Route path="/employees/:id" exact element={<View />} />
         <Route path="/employees/add" exact element={<Add />} />
-        <Route path="/employees/edit/:id" exact element={<Update />} />
+        <Route path="/employees/update/:id" exact element={<Update />} />
         <Route path="/employees" element={<Navigate to="/" />} />
       </Routes>
   )

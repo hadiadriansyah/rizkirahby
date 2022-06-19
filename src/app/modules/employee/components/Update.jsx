@@ -10,7 +10,7 @@ const Update = () => {
         <div className="card mb-4 rounded-3 shadow-sm">
           <div className="card-header py-3 px-5 d-flex justify-content-between bg-purple">
             <h4 className="my-0 fw-normal text-white">Update Employee</h4>
-            <Link className="btn btn-success text-white" to="#">
+            <Link className="btn btn-success text-white" to="/">
               <FontAwesomeIcon icon={faCircleArrowLeft} /> Back
             </Link>
           </div>

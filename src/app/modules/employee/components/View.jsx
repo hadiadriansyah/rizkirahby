@@ -10,7 +10,7 @@ const View = () => {
         <div className="card mb-4 rounded-3 shadow-sm">
           <div className="card-header py-3 px-5 d-flex justify-content-between bg-purple">
             <h4 className="my-0 fw-normal text-white">View Employee</h4>
-            <Link className='btn btn-success text-white' to='#'><FontAwesomeIcon icon={faCircleArrowLeft} /> Back</Link>
+            <Link className='btn btn-success text-white' to='/'><FontAwesomeIcon icon={faCircleArrowLeft} /> Back</Link>
           </div>
           <div className="card-body container">
             <table className="table table-bordered table-striped table-view-employee">
