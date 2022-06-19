@@ -1,0 +1,11 @@
+.bg-purple {
+  background-color: #64437D;
+}
+
+.table-employee th, .table-employee td {
+  text-align: center;
+}
+
+.table-view-employee th {
+  width: 35%;
+}
