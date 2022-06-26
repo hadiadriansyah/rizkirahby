@@ -1,5 +1,4 @@
 import React from 'react'
-import { ConfirmationDialog } from '../partials/modals/ConfirmationDialog';
 import { Header } from "./components/header/Header";
 
 const MasterLayout = ({children}) => {
@@ -12,8 +11,6 @@ const MasterLayout = ({children}) => {
                     { children }
                 </div>
             </main>
-
-            <ConfirmationDialog />
         </>
     );
 

@@ -1,9 +1,38 @@
-import React from "react";
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { getEmployeeById } from "../EmployeeService";
 
-const View = () => {
+const View = props => {
+  const { id }= useParams();
+
+  const initialEmployeeState = {
+    id: null,
+    firstName: "",
+    lastName: "",
+    email: "",
+    address: "",
+    phone: "",
+  };
+  
+  const [employee, setEmployee] = useState(initialEmployeeState);
+
+  const employeeService = id => {
+    getEmployeeById(id)
+      .then(response => {
+        setEmployee(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+
+  useEffect(() => {
+    if (id)
+    employeeService(id);
+  }, [id]);
+
   return (
     <div className="row my-5">
       <div className="col-md-6 mx-auto">
@@ -17,23 +46,23 @@ const View = () => {
               <tbody>
                 <tr>
                   <th>First Name</th>
-                  <td>Rahby</td>
+                  <td>{employee.firstName}</td>
                 </tr>
                 <tr>
                   <th>Last Name</th>
-                  <td>Rahby</td>
+                  <td>{employee.lastName}</td>
                 </tr>
                 <tr>
                   <th>Email</th>
-                  <td>Rahby</td>
+                  <td>{employee.email}</td>
                 </tr>
                 <tr>
                   <th>Address</th>
-                  <td>Rahby</td>
+                  <td>{employee.address}</td>
                 </tr>
                 <tr>
                   <th>Phone</th>
-                  <td>Rahby</td>
+                  <td>{employee.phone}</td>
                 </tr>
               </tbody>
             </table>
